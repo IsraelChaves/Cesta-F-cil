@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CestaFácil — Compare, Economize, Viva Melhor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ======================== CANVAS PARTÍCULAS ======================== -->
+<canvas id="particles-canvas"></canvas>
+
+<!-- ======================== NAVBAR ======================== -->
+<header class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="#inicio" class="logo">
+      <span class="logo-icon"><img src="img/WhatsApp_Image_2026-05-12_at_17.55.06-removebg-preview.png" alt="Logo CestaFácil" style="height: 40px; width: auto;"></span>
+      <span class="logo-text">Cesta<span class="logo-accent">Fácil</span></span>
+    </a>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#inicio" class="nav-link">Início</a>
+      <a href="#como-funciona" class="nav-link">Como Funciona</a>
+      <a href="#cupons" class="nav-link">Cupons</a>
+      <a href="#mercados" class="nav-link">Mercados</a>
+      <a href="#sobre" class="nav-link">Sobre</a>
+      <a href="#contato" class="nav-link">Contato</a>
+    </nav>
+
+    <a href="#ofertas" class="btn-primary nav-cta">
+      <span>Buscar Cupons</span>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ======================== HERO ======================== -->
+<section class="hero" id="inicio">
+  <div class="hero-container">
+    <div class="hero-left reveal">
+      <div class="badge">
+        <span class="badge-dot"></span>
+        ECONOMIA INTELIGENTE
+      </div>
+      <h1 class="hero-title">
+        Compare preços,<br />
+        <span class="hero-accent">economize sempre.</span>
+      </h1>
+      <p class="hero-desc">
+        Encontre os melhores preços de alimentos nos mercados da sua região. Cupons exclusivos, cashback e promoções em tempo real — tudo em um só lugar.
+      </p>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-num">+12k</span>
+          <span class="stat-label">Ofertas ativas</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num">R$340</span>
+          <span class="stat-label">Economia média/mês</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num">98%</span>
+          <span class="stat-label">Satisfação</span>
+        </div>
+      </div>
+      <div class="hero-btns">
+        <a href="#ofertas" class="btn-primary">
+          <span>Buscar Cupons</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#como-funciona" class="btn-ghost">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+          Como Funciona
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-right reveal reveal-delay">
+      <div class="phone-wrapper">
+        <div class="phone-glow"></div>
+        <div class="phone-mockup">
+          <div class="phone-screen">
+            <div class="phone-header">
+              <div class="phone-logo"><img src="img/WhatsApp_Image_2026-05-12_at_17.55.06-removebg-preview.png" alt="Logo CestaFácil" style="height: 24px; width: auto;"> CestaFácil</div>
+              <div class="phone-location">📍 Sua cidade</div>
+            </div>
+            <div class="phone-search">
+              <span>🔍</span> Buscar produto...
+            </div>
+            <div class="phone-label">🔥 Ofertas do dia</div>
+            <div class="phone-offers" id="phoneOffers">
+              <!-- preenchido via JS -->
+            </div>
+            <div class="phone-cashback">
+              <span class="cb-icon">💰</span>
+              <div>
+                <div class="cb-title">Cashback ativo</div>
+                <div class="cb-val">Ganhe 5% de volta</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Elementos flutuantes -->
+        <div class="float-tag tag1">🥦 -30%</div>
+        <div class="float-tag tag2">🛍️ Frete grátis</div>
+        <div class="float-tag tag3">⚡ Oferta relâmpago</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-wave">
+    <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="#0a0f1e"/>
+    </svg>
+  </div>
+</section>
+
+<!-- ======================== BENEFÍCIOS ======================== -->
+<section class="benefits" id="beneficios">
+  <div class="container">
+    <div class="section-header reveal">
+      <p class="section-label">Por que usar o CestaFácil?</p>
+      <h2 class="section-title">Tudo que você precisa para <span class="accent">economizar</span></h2>
+    </div>
+    <div class="benefits-grid">
+      <div class="benefit-card reveal">
+        <div class="benefit-icon">📊</div>
+        <h3>Compare Preços</h3>
+        <p>Veja em tempo real qual supermercado tem o menor preço para cada produto da sua lista.</p>
+        <div class="benefit-badge">Tempo real</div>
+      </div>
+      <div class="benefit-card reveal reveal-delay">
+        <div class="benefit-icon">🎟️</div>
+        <h3>Cupons Exclusivos</h3>
+        <p>Acesse centenas de cupons digitais com descontos de até 50% nos maiores supermercados.</p>
+        <div class="benefit-badge">+500 cupons</div>
+      </div>
+      <div class="benefit-card reveal reveal-delay2">
+        <div class="benefit-icon">🔒</div>
+        <h3>Seguro e Confiável</h3>
+        <p>Plataforma verificada com dados atualizados diariamente por nossa equipe especializada.</p>
+        <div class="benefit-badge">100% seguro</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== COMO FUNCIONA ======================== -->
+<section class="how-it-works" id="como-funciona">
+  <div class="container">
+    <div class="section-header reveal">
+      <p class="section-label">Processo simples</p>
+      <h2 class="section-title">Como funciona o <span class="accent">CestaFácil</span></h2>
+    </div>
+    <div class="steps-timeline">
+      <div class="step reveal">
+        <div class="step-num">01</div>
+        <div class="step-icon">📍</div>
+        <div class="step-content">
+          <h3>Escolha sua cidade</h3>
+          <p>Informe sua localização e veja os supermercados disponíveis na sua região com ofertas ativas.</p>
+        </div>
+        <div class="step-arrow">→</div>
+      </div>
+      <div class="step reveal reveal-delay">
+        <div class="step-num">02</div>
+        <div class="step-icon">🔍</div>
+        <div class="step-content">
+          <h3>Compare os preços</h3>
+          <p>Busque qualquer produto e compare o preço em todos os supermercados parceiros simultaneamente.</p>
+        </div>
+        <div class="step-arrow">→</div>
+      </div>
+      <div class="step reveal reveal-delay2">
+        <div class="step-num">03</div>
+        <div class="step-icon">🎟️</div>
+        <div class="step-content">
+          <h3>Ative cupons</h3>
+          <p>Copie os cupons de desconto e aplique diretamente no checkout do supermercado escolhido.</p>
+        </div>
+        <div class="step-arrow">→</div>
+      </div>
+      <div class="step reveal reveal-delay3">
+        <div class="step-num">04</div>
+        <div class="step-icon">💰</div>
+        <div class="step-content">
+          <h3>Economize nas compras</h3>
+          <p>Acompanhe sua economia acumulada e receba cashback diretamente na sua conta.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== OFERTAS ======================== -->
+<section class="offers-section" id="ofertas">
+  <div class="container">
+    <div class="section-header reveal">
+      <p class="section-label">Promoções em tempo real</p>
+      <h2 class="section-title">Melhores <span class="accent">Ofertas</span> de hoje</h2>
+    </div>
+
+    <!-- Controles -->
+    <div class="offers-controls reveal">
+      <div class="search-box">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        <input type="text" id="searchInput" placeholder="Buscar produto..." />
+      </div>
+      <div class="filter-tabs" id="filterTabs">
+        <button class="filter-tab active" data-cat="todos">Todos</button>
+        <button class="filter-tab" data-cat="graos">Grãos</button>
+        <button class="filter-tab" data-cat="laticinios">Laticínios</button>
+        <button class="filter-tab" data-cat="bebidas">Bebidas</button>
+        <button class="filter-tab" data-cat="limpeza">Limpeza</button>
+        <button class="filter-tab" data-cat="hortifruti">Hortifruti</button>
+      </div>
+      <div class="sort-box">
+        <select id="sortSelect">
+          <option value="discount">Maior desconto</option>
+          <option value="price-asc">Menor preço</option>
+          <option value="price-desc">Maior preço</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="offers-grid" id="offersGrid">
+      <!-- preenchido via JS -->
+    </div>
+
+    <div class="load-more reveal">
+      <button class="btn-ghost" id="loadMoreBtn">Ver mais ofertas</button>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== CUPONS ======================== -->
+<section class="coupons-section" id="cupons">
+  <div class="container">
+    <div class="section-header reveal">
+      <p class="section-label">Economize mais</p>
+      <h2 class="section-title">Cupons <span class="accent">Exclusivos</span></h2>
+    </div>
+    <div class="coupons-grid" id="couponsGrid">
+      <!-- preenchido via JS -->
+    </div>
+  </div>
+</section>
+
+<!-- ======================== COMPARADOR ======================== -->
+<section class="comparator-section" id="comparador">
+  <div class="container">
+    <div class="section-header reveal">
+      <p class="section-label">Comparação inteligente</p>
+      <h2 class="section-title">Compare preços por <span class="accent">supermercado</span></h2>
+    </div>
+
+    <div class="comparator-wrapper reveal">
+      <div class="comparator-search">
+        <input type="text" id="compareSearch" placeholder="Digite um produto para comparar..." />
+        <button class="btn-primary" id="compareBtn">Comparar</button>
+      </div>
+
+      <div class="table-wrapper" id="tableWrapper">
+        <table class="compare-table" id="compareTable">
+          <thead>
+            <tr>
+              <th>Produto</th>
+              <th>Assaí</th>
+              <th>Carrefour</th>
+              <th>Atacadão</th>
+              <th>Extra</th>
+              <th>Pão de Açúcar</th>
+            </tr>
+          </thead>
+          <tbody id="compareBody">
+            <!-- preenchido via JS -->
+          </tbody>
+        </table>
+        <div class="compare-summary" id="compareSummary"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== PARCEIROS ======================== -->
+<section class="partners-section" id="mercados">
+  <div class="container">
+    <div class="section-header reveal">
+      <p class="section-label">Nossos parceiros</p>
+      <h2 class="section-title">Supermercados <span class="accent">integrados</span></h2>
+    </div>
+    <div class="partners-track-wrapper">
+      <div class="partners-track" id="partnersTrack">
+        <div class="partner-logo">🏪 Assaí</div>
+        <div class="partner-logo">🛒 Carrefour</div>
+        <div class="partner-logo">🏬 Extra</div>
+        <div class="partner-logo">🍞 Pão de Açúcar</div>
+        <div class="partner-logo">📦 Atacadão</div>
+        <div class="partner-logo">🏪 Assaí</div>
+        <div class="partner-logo">🛒 Carrefour</div>
+        <div class="partner-logo">🏬 Extra</div>
+        <div class="partner-logo">🍞 Pão de Açúcar</div>
+        <div class="partner-logo">📦 Atacadão</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== SOBRE ======================== -->
+<section class="about-section" id="sobre">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-left reveal">
+        <p class="section-label">Sobre nós</p>
+        <h2 class="section-title">Uma plataforma feita para <span class="accent">famílias brasileiras</span></h2>
+        <p class="about-text">
+          O CestaFácil centraliza promoções em tempo real, cupons digitais e comparação de preços para ajudar famílias brasileiras a economizar no supermercado todo mês.
+        </p>
+        <p class="about-text">
+          Nossa tecnologia monitora preços 24h por dia em centenas de supermercados, garantindo que você sempre encontre a melhor oferta antes de ir às compras.
+        </p>
+        <div class="mission-box">
+          <span class="mission-icon">💡</span>
+          <div>
+            <div class="mission-label">Nossa missão</div>
+            <div class="mission-text">"Economize mais. Viva melhor."</div>
+          </div>
+        </div>
+        <div class="about-counters">
+          <div class="counter reveal">
+            <span class="counter-num" data-target="50000">0</span>
+            <span class="counter-plus">+</span>
+            <span class="counter-label">Famílias atendidas</span>
+          </div>
+          <div class="counter reveal reveal-delay">
+            <span class="counter-num" data-target="500">0</span>
+            <span class="counter-plus">+</span>
+            <span class="counter-label">Parceiros ativos</span>
+          </div>
+          <div class="counter reveal reveal-delay2">
+            <span class="counter-num" data-target="12000">0</span>
+            <span class="counter-plus">+</span>
+            <span class="counter-label">Ofertas cadastradas</span>
+          </div>
+        </div>
+      </div>
+      <div class="about-right reveal reveal-delay">
+        <div class="about-visual">
+          <div class="av-card av-card1">
+            <span>🥩</span>
+            <div>
+              <div class="av-title">Carnes</div>
+              <div class="av-price">Até 40% off</div>
+            </div>
+          </div>
+          <div class="av-card av-card2">
+            <span>🧴</span>
+            <div>
+              <div class="av-title">Higiene</div>
+              <div class="av-price">Leve 3, pague 2</div>
+            </div>
+          </div>
+          <div class="av-card av-card3">
+            <span>🍎</span>
+            <div>
+              <div class="av-title">Hortifruti</div>
+              <div class="av-price">Frescor garantido</div>
+            </div>
+          </div>
+          <div class="av-card av-card4">
+            <span>💳</span>
+            <div>
+              <div class="av-title">Cashback</div>
+              <div class="av-price">+5% de volta</div>
+            </div>
+          </div>
+          <div class="av-glow"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== CONTATO ======================== -->
+<section class="contact-section" id="contato">
+  <div class="container">
+    <div class="section-header reveal">
+      <p class="section-label">Fale conosco</p>
+      <h2 class="section-title">Entre em <span class="accent">contato</span></h2>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <div class="contact-item">
+          <span class="ci-icon">📧</span>
+          <div>
+            <div class="ci-label">E-mail</div>
+            <div class="ci-val">contato@cestafacil.com.br</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <span class="ci-icon">📱</span>
+          <div>
+            <div class="ci-label">WhatsApp</div>
+            <div class="ci-val">(11) 99999-0000</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <span class="ci-icon">🕐</span>
+          <div>
+            <div class="ci-label">Horário</div>
+            <div class="ci-val">Seg–Sex, 9h às 18h</div>
+          </div>
+        </div>
+      </div>
+
+      <form class="contact-form reveal reveal-delay" id="contactForm">
+        <div class="form-group">
+          <label>Nome completo</label>
+          <input type="text" id="contactName" placeholder="Seu nome" required />
+        </div>
+        <div class="form-group">
+          <label>E-mail</label>
+          <input type="email" id="contactEmail" placeholder="seu@email.com" required />
+        </div>
+        <div class="form-group">
+          <label>Mensagem</label>
+          <textarea id="contactMsg" rows="5" placeholder="Como podemos ajudar?" required></textarea>
+        </div>
+        <button type="submit" class="btn-primary full-width">
+          <span>Enviar mensagem</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== FOOTER ======================== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#inicio" class="logo">
+          <span class="logo-icon"><img src="img/WhatsApp_Image_2026-05-12_at_17.55.06-removebg-preview.png" alt="Logo CestaFácil" style="height: 40px; width: auto;"></span>
+          <span class="logo-text">Cesta<span class="logo-accent">Fácil</span></span>
+        </a>
+        <p>A plataforma que ajuda famílias brasileiras a economizar nas compras de supermercado.</p>
+        <div class="social-links">
+          <a href="#" class="social-link" aria-label="Instagram">📸</a>
+          <a href="#" class="social-link" aria-label="Facebook">👤</a>
+          <a href="#" class="social-link" aria-label="Twitter">🐦</a>
+          <a href="#" class="social-link" aria-label="YouTube">▶️</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Navegação</h4>
+        <a href="#inicio">Início</a>
+        <a href="#como-funciona">Como Funciona</a>
+        <a href="#cupons">Cupons</a>
+        <a href="#mercados">Mercados</a>
+        <a href="#sobre">Sobre</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Recursos</h4>
+        <a href="#ofertas">Ofertas do dia</a>
+        <a href="#comparador">Comparador</a>
+        <a href="#cupons">Cupons exclusivos</a>
+        <a href="#">Cashback</a>
+        <a href="#">App móvel</a>
+      </div>
+
+      <div class="footer-col footer-newsletter">
+        <h4>Newsletter</h4>
+        <p>Receba ofertas exclusivas direto no seu e-mail.</p>
+        <div class="newsletter-form" id="newsletterForm">
+          <input type="email" id="newsletterEmail" placeholder="seu@email.com" />
+          <button class="btn-primary" id="newsletterBtn">OK</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 CestaFácil - Israel Chaves. Todos os direitos reservados.</p>
+      <div class="footer-links">
+        <a href="#">Privacidade</a>
+        <a href="#">Termos</a>
+        <a href="#">Cookies</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ======================== TOAST ======================== -->
+<div class="toast-container" id="toastContainer"></div>
+
+<!-- ======================== BOTÃO VOLTAR AO TOPO ======================== -->
+<button class="back-to-top" id="backToTop" aria-label="Voltar ao topo">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 15l-6-6-6 6"/></svg>
+</button>
+
+<script src="script.js"></script>
+</body>
+</html>
